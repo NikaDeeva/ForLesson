@@ -1,42 +1,25 @@
-.wrap{
-    display: flex;
-}
-img{
-    width: 100%;
-}
-.card{
-    width: 300px;
-    margin: 20px;
+.container{
     position: relative;
 }
-.card > .label{
+.box{
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: aqua;
-    border: 1px dashed;
-    border-radius: 4px;
-    padding: 10px 16px;
-    color: white;
-    font-weight: 500;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: 8px;
 }
-p{
-    padding: 0;
-    margin: 0;
+.box:nth-child(1){
+    background-color: cyan;
 }
-.btn{
-    display: inline-block;
-    width: 64px;
-    height: 64px;
-    border: none;
-    background-color: transparent;
-    background-image: url(https://cdn-icons-png.flaticon.com/512/1653/1653630.png);
-    background-size: cover;
-    cursor: pointer;
-
-
-    position: fixed;
-right: 30px;
-bottom: 30px;
-
+.box:nth-child(2){
+    background-color: chartreuse;
+}
+.box:nth-child(3){
+    background-color: crimson;
+}
+.box:nth-child(4){
+    background-color: peru;
 }
