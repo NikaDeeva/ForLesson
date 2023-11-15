@@ -7,22 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<button class="btn-open">Hello</button>
-<div class="backdrop is-hidden" data-modal>
-<div class="modal">
-    <div class="form-wrap">
-        <form class="form">
-            <input required type="text" placeholder="Your name*">
-            <input required type="email" placeholder="Your e-mail*">
-            <input required type="text" placeholder="Your message*">
-            <button type="submit">Send message</button>
-        </form>
-    </div>
-    <div class="icon">
+    <form>
+        <label>
+    Name
+    <input type="text" name="text" minlength="2" maxlength="10" pattern="[a-zA-Z]+\s[a-zA-Z]+$" title="Nick Nick"/>
+  </label>
+  <label>
+    Email
+    <input type="email" name="email" required/>
+  </label>
+  <label>
+    Password
+    <input type="password" name="password" required minlength="8" maxlength="20"pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+  </label>
+  <label>
+    how many
+    <input type="number" name="number" required min="1"/>
+  </label>
 
-    </div>
-</div>
-</div>
-       <script src="script.js"></script>
+
+  <button class="btn">Active button</button>
+<button class="btn" disabled>Disabled button</button>
+</form>
+<div class="form-field">
+    <input type="checkbox" class="form-input" name="hobby" value="sports" id="sports">
+    <label class="form-label" for="sports">Sports</label>
+  </div>
+
+  <div class="form-field">
+    <input type="checkbox" class="form-input" name="hobby" value="music" id="music">
+    <label class="form-label" for="music">Music</label>
+  </div>
+
+  <div class="form-field">
+    <input type="checkbox" class="form-input" name="hobby" value="books" id="books">
+    <label class="form-label" for="books">Books</label>
+  </div>
+
+  <button type="submit">Submit</button>
 </body>
 </html>
