@@ -1,41 +1,63 @@
-.box{
-    background-color: rgb(41, 37, 69);
-    border: 4px solid black;
-    border-radius: 10%;
-    overflow: hidden;
-    text-align: center;
-    width: 600px;
+html{
+    scroll-behavior: smooth;
 }
-.wrap{
-    position: relative;
-    overflow: hidden;
+body{
+    padding-top: 100px;
 }
-.overley{
-    position: absolute;
+.page-header{
+    position: fixed;
+    background-color: indigo;
+    padding: 20px 30px;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 128, 24);
-    transform: translateY(100%);
-    transition: transform 500ms ease-in-out;
+    border-bottom:1px solid black ;
 }
-.wrap:hover .overley{
-    transform: translateY(0);
+.menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
-.img{
-    width: 100%;
+.menu-item{
+    border: 1px solid gray;
+    margin-right: 30px;
+    position: relative;
 }
-.title{
-    color: rgb(36, 121, 207);
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-align: center;
-    text-decoration: underline;
+.menu-item:hover .submenu{
+display: block;
 }
-.text{
-    color: tan;
-    font-size: 15px;
-    text-align: center;
+.menu-link{
+cursor: pointer;
+background-color: skyblue;
+padding: 10px 20px;
+display: block;
+color: black;
+font-size: 17px;
+font-weight: 700;
+}
+.submenu{
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    background-color: peachpuff;
+    position: absolute;
+    width: 82%;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+.one, .two, .three{
+    background-color: olive;
+}
+.btn{
+    background-color: plum;
+    width: 60px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
 }
