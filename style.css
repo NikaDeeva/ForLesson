@@ -1,63 +1,41 @@
-html{
-    scroll-behavior: smooth;
-}
-body{
-    padding-top: 100px;
-}
-.page-header{
-    position: fixed;
-    background-color: indigo;
-    padding: 20px 30px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-bottom:1px solid black ;
-}
-.menu{
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.box{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 900px;
+    border: 2px solid black;
 }
-.menu-item{
-    border: 1px solid gray;
-    margin-right: 30px;
-    position: relative;
+.box:hover .circle{
+    transform: scale(1.5);
 }
-.menu-item:hover .submenu{
-display: block;
-}
-.menu-link{
-cursor: pointer;
-background-color: skyblue;
-padding: 10px 20px;
-display: block;
-color: black;
-font-size: 17px;
-font-weight: 700;
-}
-.submenu{
-    list-style: none;
-    padding: 15px;
-    margin: 0;
-    background-color: peachpuff;
-    position: absolute;
-    width: 82%;
-    top: 100%;
-    left: 0;
-    display: none;
-}
-.one, .two, .three{
-    background-color: olive;
-}
-.btn{
-    background-color: plum;
-    width: 60px;
-    height: 50px;
-    border: none;
+.circle{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    cursor: pointer;
-    position: fixed;
-    bottom: 30px;
-    right: 50px;
+    margin: 20px;
+    transition-property: transform;
+}
+.circle:nth-child(1){
+    background-color: blueviolet;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    transition-duration: 500ms;
+}
+.circle:nth-child(2){
+    background-color: aqua;
+    font-weight: 700;
+    font-size: 20px;
+    transition-duration: 1500ms;
+}
+.circle:nth-child(3){
+background-color: coral;
+    color: bisque;
+    font-weight: 700;
+    font-size: 20px;
+    transition-duration: 3000ms;
 }
