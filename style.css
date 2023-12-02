@@ -1,5 +1,5 @@
 /* НЕ ВИДАЛЯТИ */
-.btn{
+/* .btn{
     display: inline-block;
     border: none;
     padding: 10px 30px;
@@ -40,4 +40,34 @@
 }
 .btn:hover::after{
     transform: translateY(-50%);
+} */
+body{
+    background-color: rgb(87, 181, 212);
+    width: 1200px;
+    margin: 0 auto;
+}
+.box{
+    width: 35%;
+    padding: 30px;
+    border: 5px double whitesmoke;
+    margin-top: 350px;
+    margin-bottom: 350px;
+}
+.list{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.item{
+    width: 45%;
+    border: 5px double whitesmoke;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    color: antiquewhite;
+}
+.image{
+    width: 70%;
 }
