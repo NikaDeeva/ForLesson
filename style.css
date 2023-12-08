@@ -40,34 +40,40 @@
 }
 .btn:hover::after{
     transform: translateY(-50%);
-} */
-body{
-    background-color: rgb(87, 181, 212);
-    width: 1200px;
-    margin: 0 auto;
-}
-.box{
-    width: 35%;
-    padding: 30px;
-    border: 5px double whitesmoke;
-    margin-top: 350px;
-    margin-bottom: 350px;
-}
-.list{
-    padding: 0;
-    list-style: none;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-}
-.item{
-    width: 45%;
-    border: 5px double whitesmoke;
-    padding: 30px;
-    text-align: center;
-    border-radius: 20px;
-    color: antiquewhite;
-}
-.image{
-    width: 70%;
-}
+} 
+#circle1 { 
+    animation-name: cirlce1; 
+    animation-duration: 3s; 
+    animation-timing-function: ease-in-out; 
+    animation-iteration-count: infinite; 
+  } 
+  #circle2 { 
+    animation-name: cirlce2; 
+    animation-duration: 3s; 
+    animation-timing-function: ease-in-out; 
+    animation-iteration-count: infinite; 
+  } 
+  @keyframes cirlce1 { 
+    from { 
+      cy: 0%; 
+      fill: none; 
+      stroke: grey; 
+    } 
+    to { 
+      cy: 50%; 
+      fill: #9284D9; 
+      stroke: white; 
+    } 
+  } 
+  @keyframes cirlce2 { 
+    from { 
+      cx: 100%; 
+      fill: none; 
+      stroke: grey; 
+    } 
+    to { 
+      cx: 52%; 
+      fill: #9284D9; 
+      stroke: white; 
+    } 
+  }
