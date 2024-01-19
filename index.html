@@ -8,30 +8,79 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- НЕ ВИДАЛЯТИ -->
- <!-- <button class="btn">
-    click
- </button> -->
- <!-- <svg width="580" height="400" xmlns="http://www.w3.org/2000/svg"> 
-  
-    <g> 
-     <title>background</title> 
-     <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/> 
-     <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid"> 
-      <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/> 
-     </g> 
-    </g> 
-    <g> 
-     <title>Layer 1</title> 
-      
-     <ellipse id="circle1" stroke="#000" ry="119.5" rx="123.5" id="svg_6" cy="193.5" cx="298" fill-opacity="null" stroke-opacity="null" stroke-width="3" fill="#fff"/> 
-     <ellipse id="circle1" stroke="#000" ry="87" rx="93.00001" id="svg_9" cy="197" cx="300.5" fill-opacity="null" stroke-opacity="null" stroke-width="3" fill="none"/> 
-     <ellipse id="circle2" stroke="#000" ry="63" rx="64.5" id="svg_11" cy="197" cx="302" fill-opacity="null" stroke-opacity="null" stroke-width="3" fill="none"/> 
-     <ellipse id="circle2" stroke="#000" ry="38" rx="37" id="svg_13" cy="198" cx="302.5" fill-opacity="null" stroke-opacity="null" stroke-width="3" fill="none"/> 
-      
-    </g> 
-   </svg> -->
-<header>
+    <header class="page-header">
+<div class="container">
+   <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+   </button>
+   <ul class="menu">
+      <li>
+         <a href="#" class="link">About</a>
+      </li>
+      <li>
+         <a href="#" class="link">Home</a>
+      </li>
+      <li>
+         <a href="#" class="link">Contacts</a>
+      </li>
+      <li>
+         <a href="#" class="link">Goods</a>
+      </li>
+   </ul>
+</div>
+    </header>
+    <main>
+      <div class="container">
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat molestiae numquam quod mollitia harum non assumenda eum. Aperiam animi dolore provident autem iure, molestiae a nihil minus. Nihil, dolor repellat.</p>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat molestiae numquam quod mollitia harum non assumenda eum. Aperiam animi dolore provident autem iure, molestiae a nihil minus. Nihil, dolor repellat.</p>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat molestiae numquam quod mollitia harum non assumenda eum. Aperiam animi dolore provident autem iure, molestiae a nihil minus. Nihil, dolor repellat.</p>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat molestiae numquam quod mollitia harum non assumenda eum. Aperiam animi dolore provident autem iure, molestiae a nihil minus. Nihil, dolor repellat.</p>
+      </div>
+    </main>
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+         <svg
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+      <ul class="mobile-menu">
+         <li>
+            <a href="#" class="link">About</a>
+         </li>
+         <li>
+            <a href="#" class="link">Home</a>
+         </li>
+         <li>
+            <a href="#" class="link">Contacts</a>
+         </li>
+         <li>
+            <a href="#" class="link">Goods</a>
+         </li>
+      </ul>
+    </div>
+<!-- <header>
    <h1>
       <a href="index.html">Logo</a>
    </h1>
@@ -62,8 +111,13 @@
       <input type="button" value="Join us" class="join">
       <input type="button" value="Getting started" class="started">
    </div>
-</header>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</header> -->
+<script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
 <script src="script.js"></script>
 </body>
 </html>
