@@ -1,20 +1,30 @@
 "use strict"
 
-const name = prompt("Write your name");
-alert(`Hello, ${name}!`);
+// const x = 5;
+// const y = 2;
+// const z = 5;
+// console.log(x + y);
+// console.log(x - y);
+// console.log(x * y);
+// console.log(x / y);
+// console.log(x % y);
 
-const change = confirm('Yes or no?');
-if (change === true){
-    alert('Thanks to accept');
-}
-else{
-    alert('Canceled');
-}
+// let a = 20;
+// let b = 10;
+// console.log(a * b);
 
-const danger = confirm('This action is dangerous. Are you sure?');
-if (danger === true){
-    alert('Action is done');
-}
-else{
-    alert('Action is canceled');
-}
+// console.log(x <= z)
+// console.log(x == y);
+// console.log(x == z);
+// console.log(x != z);
+// console.log(x === y);
+// console.log(x !== y);
+const a = "5";
+console.log(Number(a));
+console.log(typeof Number(a));
+
+const b = "Hello";
+console.log(Number(b))
+
+
+
