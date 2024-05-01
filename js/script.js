@@ -1,32 +1,24 @@
 "use strict"
-// const b = '5hello';
-// console.log(Number(b));
-// console.log(typeof Number(b));
+// const a = 'Hello' + 'GoIteens';
+// console.log(typeof a);
 
+// let b;
+// b = 7 + '5';
+// console.log(b);
+// console.log(typeof b);
 
+// b = 5 + 5 + '5';
+// console.log(b);
 
-// console.log(Number.parseInt('20px'));
-// console.log(Number.parseInt('3.94ng'));
-// console.log(Number.parseInt('px'));
+const c = 'Welcome to our Lesson';
+console.log(c.length);
 
-// console.log(Number.parseFloat('3.12px'));
-// console.log(Number.parseFloat('20px543'));
+console.log('Welcome to my house'.length);
 
-// const a = Number('20');
-// console.log(Number.isNaN(a));
+console.log(c.toLowerCase());
+console.log(c.toUpperCase());
 
-// const b = Number('hello');
-// console.log(Number.isNaN(b));
+console.log(c.indexOf('to'));
 
-console.log(0.1 + 0.2 === 0.3);
-console.log(0.1 + 0.2);
-
- console.log((0.1*10 + 0.2*10) /10);  //не видаляти
-
- console.log(Math.floor(2.8));
- console.log(Math.ceil(1.3));
- console.log(Math.round(1.7));
- console.log(Math.max(14, 152, 3));
- console.log(Math.min(25, 3.5, 42, 0.7));
- console.log(Math.pow(2, 4));
- console.log(Math.random()*(10-1) + 1);
+console.log(c.includes('Welcome'));
+console.log(c.includes('welcome'));
