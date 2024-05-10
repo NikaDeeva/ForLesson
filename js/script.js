@@ -1,47 +1,69 @@
 "use strict"
-// const a = 'Hello' + 'GoIteens';
-// console.log(typeof a);
+// let value = 'hello';
+// console.log(Boolean(value));
 
-// let b;
-// b = 7 + '5';
-// console.log(b);
-// console.log(typeof b);
-
-// b = 5 + 5 + '5';
-// console.log(b);
+// let ch = null;
+// console.log(Boolean(ch));
 
 
-// const c = 'Welcome to our Lesson';
-// console.log(c.length);
+// &&
 
-// console.log('Welcome to my house'.length);
+// const number = 15;
+// const result = number > 16 && number < 20;
+// console.log(result);
 
-// console.log(c.toLowerCase());
-// console.log(c.toUpperCase());
+// ||
 
-// console.log(c.indexOf('to'));
+// const number = 15;
+// const result = number < 20 || number > 30;
+// console.log(result);
 
-// console.log(c.includes('Welcome'));
-// console.log(c.includes('welcome'));
+// console.log(!0);
+// console.log(!true);
 
-// console.log(c.startsWith('Wel'));
-// console.log(c.endsWith('son'));
+// let cost = 0;
+// const sub = 'normal';
+// if (sub === 'pro'){
+//     cost = 100;
+// }
+// console.log(cost);
 
-// console.log(c.padEnd(25, '!'));
-// console.log(c.padStart(22, '!'));
+// let cost;
+// const sub = 'normal';
+// if (sub === 'pro'){
+//     cost = 100;
+// } 
+// else {
+//     cost = 0;
+// }
+// console.log(cost);
 
-// const s = '     Hello       ';
-// console.log(s.trim());
-
-
-const name = 'Nika';
-const age = 13;
-
-// const message = 'My name is' + ' ' + name +'. I am' + ' ' + age + + ' ' + 'years old.';
-// console.log(message);
-
-// const message = `My name is ${name} , I am ${age} years old`;
-
-const message = `Thanks to buy it, ${name}`
-console.log(message);
-
+// let cost;
+// const sub = 'premium';
+// if (sub === 'normal'){
+//     cost = 0;
+// }
+// else if(sub === 'pro'){
+//     cost = 100;
+// }
+// else if(sub === 'free'){
+//     cost = 200;
+// }
+// else{
+//     alert('Error');
+// }
+// console.log(cost);
+let sub = prompt('Your subscribe?')
+let free = 'free';
+let pro = 'pro';
+let vip = 'vip';
+if (sub === free){
+    alert('Not allowed');
+}
+else if(sub === pro){
+    alert('Allowed');
+}
+else if(sub === vip){
+    alert('Allowed');
+}
+console.log(sub);
