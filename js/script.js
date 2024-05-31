@@ -1,43 +1,36 @@
 "use strict"
-let number = 0;
-while (number <= 10){
-    console.log('number:', number);
-    number += 10;
-}
-// let clientCounter = 10;
-// const maxClient = 20;
-// while (clientCounter < maxClient){
-//     console.log(clientCounter);
-//     clientCounter += 1;
-// }
-// let password = '';
-// do{
-// password = prompt('Write password more than 5 symbols', '')
-// } while (password.length < 6);
-// console.log('Password', password);
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const arr = ['apple', 12, true, undefined];
 
-// const maxSign = 5; 
-// for (let i = 0; i < maxSign; i += 1;){
-// console.log(i);
-// }
+// const fruits = ['apple', 'kiwi', 'mango'];
+// fruits[0] = 'orange';
+// console.log(fruits.length);
+// const lastIndex = fruits.length - 1;
+// console.log(lastIndex);
+// console.log(fruits[0]);
+// console.table(fruits);
 
-// const target = 3;
-// let sum = 0;
-// for (let i = 0; i <= target; i += 1;) {
-//     sum += i;
-// }
-// console.log(sum);
+// const animals = ['cat', 'dog', 'cow'];
+// animals[10] = 'fish';
+// console.table(animals);
+// console.log(animals.length);
 
-// for (let i = 0; i < 10; i += 1){
-//     if (i === 6){
-//         break;
-//     }
-// }
+// const sports = ['swimming', 'hiking', 'badminton', 'basketball'];
+// sports[1] = 'futball';
+// sports[3] = 'gymnastics';
+// sports[7] = 'dancing';
+// console.log(sports.length);
+// console.log(sports.length - 1);
+// console.table(sports);
 
-const sum = 10;
-for (let i = 0; i < sum; i += 1){
-    if (i % 2 === 0){
-        continue;
-    }
-    console.log('nopairs:', i);
-}
+// const arrOne = [1, 5, '4', 'hello'];
+// const arrTwo = [true, 2, {}, ['a'], 222];
+// console.log(arrOne[1]);
+// console.log(arrTwo[1]);
+// console.log(arrOne[1] + arrTwo[1]);
+
+const movies = ['Titanic', 'Jumanji', 'Star Wars', 'Spiderman', '1+1', 'Orphan'];
+movies[6] = 'Hobbit';
+console.log(movies[0]);
+console.log(movies.length);
+console.table(movies);
