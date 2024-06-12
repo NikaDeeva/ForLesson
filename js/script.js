@@ -1,73 +1,63 @@
 "use strict"
-// const string = 'hello, my friends';
-// console.log(string.split(''));
+const add = function(a, b, c){
+    return a + b + c;
+}
+// const result = add(1, 3, 7);
+// console.log(result);
+// console.log(add(5, 10, 15));
 
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// console.log(names.join(', '));
+// const count = function(countFrom = 0, countTo = 5, step = 2){
+//     console.log(`From count = ${countFrom}. To count = ${countTo}. Step = ${stop}`);
+//     for (let i = countFrom; i <= countTo; i += step){
+//         console.log(i);
+//     }
+// };
+// count (2, 30);
 
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// console.log(names.indexOf('Bob'));
+// const sum = function(amount, balance){
+//     if (amount === 0){
+//         console.log('Write sum more than 0');
+//     }
+//     else if(amount > balance){
+// console.log('Money aren`t enough');
+//     }
+//     else {
+//         console.log('Operation done');
+//     }
+// };
+// sum(40, 400);
+// sum(300, 1500);
+// sum(500, 350);
 
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// console.log(names.includes('Dima'));
+// const sum = function(amount, balance){
+//     if (amount === 0){
+//         console.log('Write sum more than 0');
+//         return;
+//     }
+//     if(amount > balance){
+//         console.log('Money aren`t enough');
+//         return
+//     }
+//     console.log('Operation done')
+// };
+// sum(300, 400);
 
-// const fruits = ['apple', 'banana', 'cherry'];
-// const fruit = 'cherry';
-// if (fruits.includes(fruit)){
-//     console.log('yes');
-// } 
-// else{
-//     console.log('no');
+// function add (a, b, c){
+//     console.log(a + b + c);
+//     return;
 // }
 
-// const numbers = [1, 2];
-// numbers.push(5);
-// console.log(numbers);
-// numbers.push(8);
-// console.log(numbers);
-// numbers.push('one');
-// console.log(numbers);
+const sum = function(){
+    let total = 0;
+    for (const argument of arguments){
+        total += argument;
+    }
+    return total;
+};
+console.log(sum(2, 4, 6));
 
-// console.log(numbers.pop());
-// console.log();
-
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// console.log(names.shift());
-// console.log(names);
-
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// names.unshift('Bohdan');
-// names.unshift('Petro');
-// console.log(names);
-
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// console.log(names.slice(1, 3));
-// console.log(names.slice());
-
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// const newNames = names.splice(0, 3);
-// console.log(names);
-// console.log(newNames);
-
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// names.splice(0, 0, 'Sonia');
-// console.log(names);
-
-// const names = ['Alex', 'David', 'Nika', 'Bob', 'Yana', 'Artur'];
-// names.splice(1, 1, 'Maria');
-// console.log(names);
-// names.splice(2, 1, 'Violeta', 'Petro', 'Tom');
-// console.log(names);
-
-// const fruits = ['apple', 'orange', 'kiwi'];
-// const numbers = [1, 3, 5 ,7];
-// const arr = fruits.concat(numbers);
-// console.log(arr);
-// console.log(fruits);
-// console.log(numbers);
-
-// const message = 'Welcome to Ukraine!';
-// const messageArr = message.split('')
-// console.log(messageArr);
-// console.log(messageArr.indexOf('l'));
-// console.log(messageArr.join(''));
+const fn = function(){
+    const arg = Array.from(arguments);
+    console.log(arg);
+};
+fn(5, 9, 10);
