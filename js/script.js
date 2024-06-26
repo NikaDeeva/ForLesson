@@ -1,52 +1,79 @@
 "use strict"
-// const sum = function(a, b, c){
-//     return a + b + c;
+// const user = {
+//    name: 'Bob',
+//    age: 20
+// };
+// console.log(user.name);
+// console.log(user['name']);
+
+// user.name = 'Alex';
+// console.log(user.name);
+// user['age'] = 21;
+// console.log(user['age']);
+// console.log(user);
+
+// user.dirrection = 'Av. javascript';
+// console.log(user);
+// console.log(user.class);
+
+// const hotel = {
+//    name: 'Hitel',
+//    stars: 5,
+//    capacity: 250,
+//    guests: ['Ana', 'Bob', 'Nick']
 // }
+// delete hotel.stars;
+// console.log(hotel);
 
-// const add = (a, b, c) => a + b + c;
-
-// const a = x => {return x + 5};
-
-// const b = () => {
-//     console.log('Hello');
+// let name = 'Hilton';
+// let stars = 5;
+// const newHotel = {
+//    name: name,
+//    stars: stars,
 // }
-
-// const arr = [1, 2, 3, 4, 5];
-// function sumArray(arr, callback) {
-//    let sum = 0;
-//    for (let i = 0; i < arr.length; i++){
-// sum += callback(arr[i]);
-//    }
-//    return sum;
-//     };
-//     function cb (elements){
-//         return elements;
-//     }
-//     console.log(sumArray(arr, cb));
-
-// const add = (...arg) => {
-//    console.log(arg);
+// const hotelNew = {
+//    name,
+//    stars,
+//    capacity: 250,
 // }
-// add(1, 2, 3, 4, 5);
+// console.log(hotelNew);
 
-// const myNewArrowFunction = (...arg) => {
-//    console.log(arg);
+// const myArray = {
+//    name: 'Nika',
+//    age: 13,
+//    city: 'Madrid',
+//    occupation: 'Student',
 // }
-// myNewArrowFunction(1, 2, 3);
-// myNewArrowFunction(100, 200, 300, 400, 500);
-// myNewArrowFunction("Js", "Python", "Java", "PHP", "C++");
+// myArray.age = 14;
+// myArray.city = 'Valencia';
+// console.log(myArray);
+// delete myArray.age;
+// console.log(myArray);
+// myArray.dirrection = 'Av. javascript';
+// console.log(myArray);
 
-// const helloOne = () => 'Hello JavaScript';
-// console.log(helloOne());
+// const key = 'person';
+// const age = 'old'
+// const object = {};
+// object[key] = 'Bob';
+// object[age] = 15;
+// console.log(object);
 
-// const helloTwo = (name) => `Hello ${name}`;
-// console.log(helloTwo());
+// const key = 'person';
+// const getKey = function(){
+//    return 'age';
+// }
+// const object = {
+//    [key]: 'Nick',
+//    [getKey()]: 15,
+// }
+// console.log(object);
 
-const mul = (n, m) => {
-   return {
-      sum: n + m,
-      mult: n * m,
-      riz: n - m
-   };
-};
-console.log(mul(2, 3));
+// let key = 'login';
+// let wordKey = 'password';
+// const object = {
+//    [key]: 'Java',
+//    [wordKey]: 'Hello',
+//    name: 'Sara',
+// }
+// console.log(object);
