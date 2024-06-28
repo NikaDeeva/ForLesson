@@ -77,3 +77,64 @@
 //    name: 'Sara',
 // }
 // console.log(object);
+
+// const hotel = {
+//     name: 'Hilton',
+//     stars: 5,
+//     get: function(){
+//         console.log('Hello');
+//     },
+
+//     getOne() {
+//         console.log('Hello');
+//     }
+// }
+// hotel.get();
+
+// const me = {
+//     name: "Nika",
+//     age: 13,
+//     hobby: 'Reading',
+// };
+// console.log(me);
+
+// const car = {
+//     brand: 'BMV',
+//     model: 4,
+//     year: 2014,
+//     color: 'pink',
+//     get: function(){
+//         const info = `Brand: ${this.brand}; Model: ${this.model}; Year: ${this.year}; Color: ${this.color}`;
+//         document.getElementById('carInfo').innerText = info;
+//     }
+// };
+// car.get()
+
+const restaurant = {
+    name: 'Ginos',
+    cuisiner: 'Italian',
+    address: 'Av. America',
+    rating: 4,
+    updateInfo(addressUp, ratingUp){
+     this.address = addressUp;
+     this.rating = ratingUp;
+     this.displayInfo();
+    },
+    displayInfo(){
+        document.getElementById('name').innerText = 'Name: ' + this.name;
+        document.getElementById('cuis').innerText = 'Cuisiner: ' + this.cuisiner;
+        document.getElementById('address').innerText = 'Address: ' + this.address;
+        document.getElementById('rating').innerText = 'Rating: ' + this.rating;
+    },
+};
+restaurant.displayInfo();
+function updateRestaurant(){
+    const addressUp = document.getElementById('addressUp').value;
+    const ratingUp = parseFloat(document.getElementById('ratingUp').value);
+    if (addressUp && !isNaN(ratingUp)){
+        restaurant.updateInfo(addressUp, ratingUp);
+    }
+    else{
+        alert('Write correct info');
+    }
+}
