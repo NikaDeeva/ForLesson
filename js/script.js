@@ -1,140 +1,74 @@
 "use strict"
 // const user = {
-//    name: 'Bob',
-//    age: 20
-// };
-// console.log(user.name);
-// console.log(user['name']);
+//     name: 'Bob',
+//     age: 15,
+//     class: 10,
+// }
+// for (const key in user){
+//     console.log('Keys', key);
+// }
+// for (const key in user){
+//     console.log('Values', user[key]);
+// }
+// const keys = Object.keys(user);
+// console.log(keys);
 
-// user.name = 'Alex';
-// console.log(user.name);
-// user['age'] = 21;
-// console.log(user['age']);
+// const values = Object.values(user);
+// console.log(values);
+
+// const entries = Object.entries(user);
 // console.log(user);
-
-// user.dirrection = 'Av. javascript';
-// console.log(user);
-// console.log(user.class);
-
-// const hotel = {
-//    name: 'Hitel',
-//    stars: 5,
-//    capacity: 250,
-//    guests: ['Ana', 'Bob', 'Nick']
-// }
-// delete hotel.stars;
-// console.log(hotel);
-
-// let name = 'Hilton';
-// let stars = 5;
-// const newHotel = {
-//    name: name,
-//    stars: stars,
-// }
-// const hotelNew = {
-//    name,
-//    stars,
-//    capacity: 250,
-// }
-// console.log(hotelNew);
-
-// const myArray = {
-//    name: 'Nika',
-//    age: 13,
-//    city: 'Madrid',
-//    occupation: 'Student',
-// }
-// myArray.age = 14;
-// myArray.city = 'Valencia';
-// console.log(myArray);
-// delete myArray.age;
-// console.log(myArray);
-// myArray.dirrection = 'Av. javascript';
-// console.log(myArray);
-
-// const key = 'person';
-// const age = 'old'
-// const object = {};
-// object[key] = 'Bob';
-// object[age] = 15;
-// console.log(object);
-
-// const key = 'person';
-// const getKey = function(){
-//    return 'age';
-// }
-// const object = {
-//    [key]: 'Nick',
-//    [getKey()]: 15,
-// }
-// console.log(object);
-
-// let key = 'login';
-// let wordKey = 'password';
-// const object = {
-//    [key]: 'Java',
-//    [wordKey]: 'Hello',
-//    name: 'Sara',
-// }
-// console.log(object);
 
 // const hotel = {
 //     name: 'Hilton',
 //     stars: 5,
-//     get: function(){
-//         console.log('Hello');
-//     },
-
-//     getOne() {
-//         console.log('Hello');
-//     }
+//     capacity: 350,
 // }
-// hotel.get();
+// const keys = Object.keys(hotel);
+// console.log(keys);
+// for (const key of keys){
+//     console.log(hotel[key]);
+// }
 
-// const me = {
-//     name: "Nika",
-//     age: 13,
-//     hobby: 'Reading',
-// };
-// console.log(me);
+// const entries = Object.entries(hotel);
+// console.log(entries);
+// for (const entry of entries){
+//     const key = entry[0];
+//     const value = entry[1];
+//     console.log(`${key}: ${value}`);
+// }
 
-// const car = {
-//     brand: 'BMV',
-//     model: 4,
-//     year: 2014,
-//     color: 'pink',
-//     get: function(){
-//         const info = `Brand: ${this.brand}; Model: ${this.model}; Year: ${this.year}; Color: ${this.color}`;
-//         document.getElementById('carInfo').innerText = info;
-//     }
-// };
-// car.get()
+// const goods = {
+//     apples: 7,
+//     oranges: 10,
+//     kiwi: 5,
+//     grapes: 8,
+// }
+// const values = Object.values(goods);
+// let total = 0;
+// for (const value of values){
+//     total += value;
+// }
+// console.log(total);
 
-const restaurant = {
-    name: 'Ginos',
-    cuisiner: 'Italian',
-    address: 'Av. America',
-    rating: 4,
-    updateInfo(addressUp, ratingUp){
-     this.address = addressUp;
-     this.rating = ratingUp;
-     this.displayInfo();
-    },
-    displayInfo(){
-        document.getElementById('name').innerText = 'Name: ' + this.name;
-        document.getElementById('cuis').innerText = 'Cuisiner: ' + this.cuisiner;
-        document.getElementById('address').innerText = 'Address: ' + this.address;
-        document.getElementById('rating').innerText = 'Rating: ' + this.rating;
-    },
-};
-restaurant.displayInfo();
-function updateRestaurant(){
-    const addressUp = document.getElementById('addressUp').value;
-    const ratingUp = parseFloat(document.getElementById('ratingUp').value);
-    if (addressUp && !isNaN(ratingUp)){
-        restaurant.updateInfo(addressUp, ratingUp);
-    }
-    else{
-        alert('Write correct info');
-    }
-}
+// const tem = [33, 30, 28];
+// const min = Math.min(tem);
+// console.log(min);
+
+// const minTemp = Math.min(...tem);
+// console.log(minTemp);
+
+// const names = ['Bogdan', 'Yulia', 'David', 'Roman', 'Sofia', 'Dmytro'];
+// const spreadNames = [...names];
+// console.log(names);
+// console.log(spreadNames);
+// console.log(spreadNames === names);
+// const sliceNames = names.slice();
+// console.log(names);
+// console.log(sliceNames);
+// const newNames = [...names, 'Artur'];
+// console.log(newNames);
+// const num = [1, 2, 3];
+// const letters = ['a', 'b', 'c'];
+// const sumArr = [...num, ...letters];
+// console.log(sumArr);
