@@ -71,4 +71,49 @@
 // const num = [1, 2, 3];
 // const letters = ['a', 'b', 'c'];
 // const sumArr = [...num, ...letters];
-// console.log(sumArr);
+// (sumArr);
+
+// const names = ['Sara', 'Nick', 'Din', 'Alex'];
+// const newNames = [...names, 'Bob'];
+// console.log(newNames);
+
+// const names = ['Sara', 'Nick', 'Din', 'Alex'];
+// const num = [2, 5, 8, 4];
+// const arr = [...names, ...num];
+// console.log(arr);
+
+// const nums = [3, 5, 4, 1];
+// const newNums = [...nums, 3];
+// console.log(newNums);
+
+// const names = ['Sara', 'Nick', 'Din', 'Alex'];
+// const newNames = [...names.slice(0, 1), 'Bob', ...names.slice(3)];
+// console.log(newNames);
+
+// const a = {
+//     x: 5,
+//     y: 10,
+// }
+// const b = {
+//     x: 20,
+//     c: 25,
+// }
+// const d = Object.assign({}, a, b);
+// console.log(d);
+
+// const d = { r: 25, ...a, t: 30, ...b};
+// console.log(d);
+
+let a = 10;
+let b = 15;
+a = 20;
+console.log(a);
+console.log(b);
+
+const c = ['Bob'];
+const d = c;
+console.log(c);
+console.log(d);
+c.push('Nick');
+console.log(c);
+console.log(d);
