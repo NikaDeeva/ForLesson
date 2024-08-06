@@ -74,34 +74,70 @@
 // console.log(b);
 
 
-class User{
-    static Roles = {
-        ADMIN: 'admin',
-        USER: 'user',
-    }
-    #mail;
-    #role;
-    constructor({name, age, mail, role}){
-    this.name = name;
-    this.age = age;
-    this.#mail = mail;
-    this.#role = role;
-    }
-    get role(){
-     return this.#role;
-    }
-    set role(newrole){
-      if (newMail === ''){
-        console.log('error');
-        return;
-      }
-      this.role = newrole;
-    }
+// class User{
+//     static Roles = {
+//         ADMIN: 'admin',
+//         USER: 'user',
+//     }
+//     #mail;
+//     #role;
+//     constructor({name, age, mail, role}){
+//     this.name = name;
+//     this.age = age;
+//     this.#mail = mail;
+//     this.#role = role;
+//     }
+//     get role(){
+//      return this.#role;
+//     }
+//     set role(newrole){
+//       if (newMail === ''){
+//         console.log('error');
+//         return;
+//       }
+//       this.role = newrole;
+//     }
+// }
+// const c = new User({
+//     mail: 'c@gmail.com',
+//     role: User.Roles.ADMIN,
+// });
+// console.log(c.role);
+// c.role = User.Roles.USER;
+// console.log(c.role);
+
+// class User{
+//   static #emails = [];
+//   static isEmails(email){
+//     return User.#emails.includes(email);
+//   }
+//   #email;
+//   constructor({email}){
+//     this.#email = email;
+//     User.#emails.push(email);
+//   }
+// }
+// const newMail = new User({ email: 'test@gmail.com'});
+// console.log(User.isEmails('test@gmail.com'));
+
+class User {
+  #email;
+  constructor(email){
+    this.#email = email;
+  }
+  get email(){
+    return this.#email;
+  }
+  set email(newEmail){
+    this.#email = newEmail;
+  }
+};
+class Admin extends User{
+  constructor({email, post}){
+    super(email);
+    this.post = post;
+  }
 }
-const c = new User({
-    mail: 'c@gmail.com',
-    role: User.Roles.ADMIN,
-});
-console.log(c.role);
-c.role = User.Roles.USER;
-console.log(c.role);
+const admin = new Admin ({email: 'test@gmail.com', post: []});
+console.log(admin);
+console.log(admin.email);
