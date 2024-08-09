@@ -24,7 +24,7 @@
 const button = document.querySelector('.btn');
 button.style.backgroundColor = 'pink';
 button.style.color = 'white';
-console.log(button.style)ж
+console.log(button.style)
 
 element.classList.add();
 document.classList.remove('.text');
