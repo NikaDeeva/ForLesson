@@ -1,79 +1,15 @@
-/* НЕ ВИДАЛЯТИ */
-/* .btn{
-    display: inline-block;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: darkred;
-    background-color: lightseagreen;
-    transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
-    position: relative;
-    overflow: hidden;
+body{
+  background-color: skyblue;
+  margin: 20px;
+  padding: 0 15px;
 }
-.btn:hover,
-.btn:focus{
-    background-color: midnightblue;
-    color: cornsilk;
+.username li{
+  border: 1px dashed teal;
+  padding: 8px;
+  text-transform: uppercase;
 }
-.btn::before, .btn::after{
-    content: "";
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
+.username{
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.btn::before{
-    background-image: url(./evel.webp);
-    margin-right: 10px;
-}
-.btn::after{
-    background-image: url(./Без\ названия.jpeg);
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(calc(-50% + 35px));
-}
-.btn:hover::before{
-    transform: translateY(-35px);
-}
-.btn:hover::after{
-    transform: translateY(-50%);
-} 
-#circle1 { 
-    animation-name: cirlce1; 
-    animation-duration: 3s; 
-    animation-timing-function: ease-in-out; 
-    animation-iteration-count: infinite; 
-  } 
-  #circle2 { 
-    animation-name: cirlce2; 
-    animation-duration: 3s; 
-    animation-timing-function: ease-in-out; 
-    animation-iteration-count: infinite; 
-  } 
-  @keyframes cirlce1 { 
-    from { 
-      cy: 0%; 
-      fill: none; 
-      stroke: grey; 
-    } 
-    to { 
-      cy: 50%; 
-      fill: #9284D9; 
-      stroke: white; 
-    } 
-  } 
-  @keyframes cirlce2 { 
-    from { 
-      cx: 100%; 
-      fill: none; 
-      stroke: grey; 
-    } 
-    to { 
-      cx: 52%; 
-      fill: #9284D9; 
-      stroke: white; 
-    } 
-  }
