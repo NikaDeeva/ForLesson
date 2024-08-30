@@ -61,10 +61,40 @@
 // }
 // });
 
-const element = document.getElementById('mouseDown-up');
-element.addEventListener('mousedown', () => {
-    element.textContent = 'Мишку натиснуто';
-});
-element.addEventListener('mouseup', () => {
-    element.textContent = 'Мишку відпущено';
+// const element = document.getElementById('mouseDown-up');
+// element.addEventListener('mousedown', () => {
+//     element.textContent = 'Мишку натиснуто';
+// });
+// element.addEventListener('mouseup', () => {
+//     element.textContent = 'Мишку відпущено';
+// });
+
+// const element = document.getElementById('mouseOver-out');
+// element.addEventListener('mouseover', () => {
+//     element.textContent = 'Мишку наведено';
+// });
+// element.addEventListener('mouseout', () => {
+//     element.textContent = 'Мишку відведено';
+// });
+
+// const element = document.getElementById('mouseMove');
+// element.addEventListener('mousemove', (e) => {
+// element.textContent = `Mouse coordinals are: x: ${e.clientX}, y: ${e.clientY}`;
+// });
+
+const block = document.querySelector('.block');
+
+document.addEventListener('mousemove', e => {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+  const width = block.offsetWidth;
+  const height =  block.offsetHeight;
+  const newBlockX = mouseX - width / 2;
+  const newBlockY = mouseY - height / 2;
+  block.style.left = `${newBlockX}px`;
+  block.style.top = `${newBlockY}px`;
+ });
+ document.addEventListener('click', () => {
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    const blockColor = block.style.backgroundColor = `${randomColor}`;
 });
