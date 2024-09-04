@@ -82,19 +82,56 @@
 // element.textContent = `Mouse coordinals are: x: ${e.clientX}, y: ${e.clientY}`;
 // });
 
-const block = document.querySelector('.block');
+// const block = document.querySelector('.block');
 
-document.addEventListener('mousemove', e => {
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
-  const width = block.offsetWidth;
-  const height =  block.offsetHeight;
-  const newBlockX = mouseX - width / 2;
-  const newBlockY = mouseY - height / 2;
-  block.style.left = `${newBlockX}px`;
-  block.style.top = `${newBlockY}px`;
- });
- document.addEventListener('click', () => {
-    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    const blockColor = block.style.backgroundColor = `${randomColor}`;
+// document.addEventListener('mousemove', e => {
+//   const mouseX = e.clientX;
+//   const mouseY = e.clientY;
+//   const width = block.offsetWidth;
+//   const height =  block.offsetHeight;
+//   const newBlockX = mouseX - width / 2;
+//   const newBlockY = mouseY - height / 2;
+//   block.style.left = `${newBlockX}px`;
+//   block.style.top = `${newBlockY}px`;
+//  });
+//  document.addEventListener('click', () => {
+//     const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+//     const blockColor = block.style.backgroundColor = `${randomColor}`;
+// });
+
+
+// document.addEventListener('keydown', (event) =>{
+//   const cat = document.getElementById('box');
+//   const step = 100;
+//   let left = parseInt(window.getComputedStyle(cat).left);
+//  if (event.key === 'ArrowLeft'){
+//   cat.style.left = `${left - step}px`;
+//  }
+//  else if (event.key === 'ArrowRight'){
+//   cat.style.left = `${left + step}px`;
+//  }
+// });
+
+const keys = ['g', 'w', 'n', 'y', 'e', 'c', 'x', 'z', 'u', 'k'];
+let currentKeyIndex = 0;
+function startGame(){
+  currentKeyIndex = Math.floor(Math.random() * keys.length);
+document.getElementById('key').textContent = keys[currentKeyIndex];
+};
+document.addEventListener('keydown', (e) => {
+  if (e.key === keys[currentKeyIndex]){
+    document.getElementById('message').textContent = 'Great! Click next key';
+    startGame();
+  }
+  else{
+    document.getElementById('message').textContent = 'Try again';
+  }
 });
+document.addEventListener('keypress', (e) => {
+e.preventDefault();
+});
+document.getElementById('resetGame').addEventListener('click', () =>{
+  document.getElementById('message').textContent = 'Press corrent key';
+  startGame();
+});
+startGame();
