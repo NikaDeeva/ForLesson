@@ -112,26 +112,98 @@
 //  }
 // });
 
-const keys = ['g', 'w', 'n', 'y', 'e', 'c', 'x', 'z', 'u', 'k'];
-let currentKeyIndex = 0;
-function startGame(){
-  currentKeyIndex = Math.floor(Math.random() * keys.length);
-document.getElementById('key').textContent = keys[currentKeyIndex];
+// const keys = ['g', 'w', 'n', 'y', 'e', 'c', 'x', 'z', 'u', 'k'];
+// let currentKeyIndex = 0;
+// function startGame(){
+//   currentKeyIndex = Math.floor(Math.random() * keys.length);
+// document.getElementById('key').textContent = keys[currentKeyIndex];
+// };
+// document.addEventListener('keydown', (e) => {
+//   if (e.key === keys[currentKeyIndex]){
+//     document.getElementById('message').textContent = 'Great! Click next key';
+//     startGame();
+//   }
+//   else{
+//     document.getElementById('message').textContent = 'Try again';
+//   }
+// });
+// document.addEventListener('keypress', (e) => {
+// e.preventDefault();
+// });
+// document.getElementById('resetGame').addEventListener('click', () =>{
+//   document.getElementById('message').textContent = 'Press corrent key';
+//   startGame();
+// });
+// startGame();
+// document.addEventListener('keydown', function(event){
+//   const element = document.getElementById('box');
+//   if (event.key === 'y'){
+//     element.style.backgroundColor = 'yellow';
+//   }
+//   else if (event.key === 'g'){
+//     element.style.backgroundColor = 'green';
+//   }
+//   else if(event.key === 'p'){
+//     element.style.backgroundColor = 'pink';
+//   }
+//   else if(event.key === 'b'){
+//     element.style.backgroundColor = 'blue';
+//   }
+// });
+// const links = document.querySelectorAll('ul li a');
+// links.forEach(link => {
+//   const href = link.getAttribute('href');
+//   if (href.startsWith('https:') || href.startsWith('http') || href.startsWith('ftp')){
+//     link.style.color = 'orange';
+//   }
+// });
+// if (links.length > 0){
+//   links[0].classList.add('styledLink');
+//   links[links.length - 1].classList.add('styledLink');
+// };
+// const title = document.querySelector('h1');
+// title.classList.add('title');
+// title.textContent = 'Testing js';
+// title.style.color = 'skyblue';
+// title.classList.replace('title', 'newTitle');
+
+// links.forEach(link => {
+//   if (link.classList.contains('list')){
+//      alert('True');
+//   }
+//   else {
+//      alert('False');
+//   }
+// });
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// const firstSum = array1.reduce((acc, num) => acc + num, 0);
+// const secondSum = array2.reduce((acc, num) => acc + num, 0);
+// const total = firstSum + secondSum;
+// console.log(total);
+
+// const products = [
+//   {name: 'Macbook', price: 1000, cathegory: 'technology', stock: 4},
+//   {name: 'Skirt', price: 20, cathegory: 'clothes', stock: 6},
+//   {name: 'Socks', price: 5, cathegory: 'clothes', stock: 4},
+//   {name: 'Iphone', price: 950, cathegory: 'technology', stock: 1},
+// ];
+// const countTotalPrice = function(products, cathegory){
+// return products.filter(product => product.cathegory === cathegory)
+// .reduce((total, product) => 
+//   total + (product.price * product.stock), 0);
+// };
+// const totalValue = countTotalPrice(products, 'clothes');
+// console.log(`Total goods price by cathegory clothes are ${totalValue} dollars`);
+
+class Person{
+  constructor(firstName, lastName){
+   this.firstName = firstName;
+   this.lastName = lastName;
+  }
+  getFullName(){
+return `${this.firstName} ${this.lastName}`;
+  }
 };
-document.addEventListener('keydown', (e) => {
-  if (e.key === keys[currentKeyIndex]){
-    document.getElementById('message').textContent = 'Great! Click next key';
-    startGame();
-  }
-  else{
-    document.getElementById('message').textContent = 'Try again';
-  }
-});
-document.addEventListener('keypress', (e) => {
-e.preventDefault();
-});
-document.getElementById('resetGame').addEventListener('click', () =>{
-  document.getElementById('message').textContent = 'Press corrent key';
-  startGame();
-});
-startGame();
+const personOne = new Person('Nika', 'Dieieva');
+console.log(personOne.getFullName());
