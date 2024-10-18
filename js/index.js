@@ -35,7 +35,42 @@
 //     alert('des click');
 //  });
 
-const box = document.querySelector('div.box');
-box.addEventListener('click', function (event){
-console.log(event.target);
-});
+// const box = document.querySelector('div.box');
+// box.addEventListener('click', function (event){
+// console.log(event.target);
+// });
+
+const palette = document.querySelector('.color-palette');
+const output = document.querySelector('.output');
+palette.addEventListener('click', selectColor);
+function selectColor(event){
+    if (event.target.nodeName !== 'BUTTON'){
+        return;
+    }
+    const selectedColor = event.target.dataset.color;
+    output.textContent = `Selected color: ${selectedColor}`;
+    output.style.color = selectedColor;
+}
+createPaletteItems();
+
+function createPaletteItems() {
+const items = [];
+for (let i = 0; i < 60; i++){
+    const color = getRandomHexColor();
+    let item = document.createElement('button');
+    item.type = 'button';
+    item.dataset.color = color;
+    item.style.backgroundColor = color;
+    item.classList.add('item');
+    items.push(item);
+}
+palette.append(...items);
+}
+function getRandomHexColor(){
+    const numbers = '0123456789ABCDEF';
+    let col = '#';
+    for (let i = 0; i < 6; i++){
+        col += numbers[Math.floor(Math.random() * 16)]; 
+    }
+    return col;
+}
