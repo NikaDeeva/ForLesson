@@ -7,9 +7,31 @@
 
     </head>
     <body>
-<p class="output"></p>
+<!-- <div class="output"></div> -->
+ <!-- <p class="cta">Scroll</p>
+ <div class="event-counter">
+ <div class="box">
+    <p class="text">Scroll events num</p>
+    <span class="output">0</span>
+</div>
+</div> -->
+<p class="cta">Scroll</p>
+<div class="event-counter">
+    <div class="box">
+        <p class="text">No timing function</p>
+        <span class="output vanilla">0</span>
+    </div>
+    <div class="box">
+        <p>Throttle</p>
+        <span class="output throttle">0</span>
+    </div>
+    <div class="box">
+        <p>Debounce</p>
+        <span class="output debounce">0</span>
+    </div>
+</div>
 
-        <script async src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
         <script type="module" src="./js/index.js"></script>
     </body>
 </html>
