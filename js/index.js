@@ -60,9 +60,55 @@
 // document.addEventListener('mousemove', _.debounce((event) => {
 //     console.log(event.clientX, event.clientY);
 // }, 100));
-const welcome = document.querySelector('#welcome');
-const name = document.querySelector('#name');
-name.addEventListener('input', _.debounce((event) => {
-    const text = event.target.value;
-    welcome.textContent = `Welcome, ${text}`;
-}, 1000));
+// const welcome = document.querySelector('#welcome');
+// const name = document.querySelector('#name');
+// name.addEventListener('input', _.debounce((event) => {
+//     const text = event.target.value;
+//     welcome.textContent = `Welcome, ${text}`;
+// }, 1000));
+
+// function updateCoordinats(event){
+//     const graph = document.getElementById('graph');
+//     const point = document.getElementById('point');
+//     const coordDisplay  = document.getElementById('coord');
+
+//     const rect = graph.getBoundingClientRect();
+//     const x = event.clientX - rect.left;
+//     const y = event.clientY - rect.top;
+
+//     point.setAttribute('cx', x);
+//     point.setAttribute('cy', y);
+
+//     coordDisplay.textContent = `X: ${x.toFixed(0)} Y: ${y.toFixed(0)}`;
+// };
+
+// const graphic = document.getElementById('graph');
+// graphic.addEventListener('mousemove', _.throttle(updateCoordinats, 50));
+
+// const text = document.querySelector('.text');
+// const plus = document.querySelector('#plus');
+// const minos = document.querySelector('#minos');
+
+// function updateSize(change){
+//     let currentSize = parseInt(window.getComputedStyle(text).fontSize);
+//     text.style.fontSize = `${currentSize + change}px`;
+// };
+// plus.addEventListener('click', () => {
+//     updateSize(2);
+// });
+// minos.addEventListener('click', () => {
+//     updateSize(-2);
+// });
+
+const userList = document.getElementById('userList');
+
+
+userList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('deleteButton') ){
+        // const user = event.target.closest('li');
+        // if (user){
+        //     user.remove();
+        // }
+        const user = event.target.parentElement.remove('li');
+    }
+})

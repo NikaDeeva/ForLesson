@@ -64,3 +64,11 @@
   color: indigo;
   font-weight: 700;
 } */
+
+#point{
+  transition: cx 100ms, cy 100ms;
+}
+.text{
+  font-size: 20px;
+  font-weight: 600;
+}
