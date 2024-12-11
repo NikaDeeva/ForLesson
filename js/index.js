@@ -1,52 +1,34 @@
-"use strict"
-// IntersectionObserver(callback, options)
+// const dog = {
+//     name: 'Bobik',
+//     age: 5,
+//     isGoodBoy: false,
+//     bark() {
+//         console.log('Woof');
+//     }
+// }
+// const json = JSON.stringify(dog);
+// console.log(json);
 
-// const options = {
-//     rootMargin: '50px',
-//     threshold: 0.25,
-// };
-// const onEntry = (entries, observers) => {
-//     entries.forEach(entry => {
-//         // 
-//     })
-// };
-// const observer = new IntersectionObserver(onEntry, options);
+// const jsonNew = JSON.stringify(() => {
+//     console.log('Hello');
+// });
+// console.log(jsonNew);
+// console.log(JSON.parse("5"));
+// console.log(JSON.parse("true"));
 
-// const options = {
-//     root: null,
-// rootMargin: '0px',
-// threshold: 0.1,
-// };
-// const observer = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting){
-//             const img = entry.target;
-//             img.src = img.dataset.src;
-//             observer.unobserve();
-//         }
-//     })
-// }, options);
-// document.querySelectorAll('.lazy-image').forEach(img => {
-//     observer.observe(img);
-// })
+// const jsonTwo = '{"name": "Bobik","age": 5, "isGoodBoy": false}';
+// const dogNew = JSON.parse(jsonTwo);
+// console.log(dogNew);
+// console.log(dogNew.name);
 
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.fruits-list li');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const img = entry.target.querySelector('img');
-            const title = entry.target.querySelector('h3');
+const book = `{"name": "Eat Pray Love", "author": "Elizabeth", "year": 2006, "genre": "dramma"}`;
+console.log(JSON.parse(book));
 
-            if (entry.isIntersecting){
-                img.src = img.getAttribute('data-high-res');
-                entry.target.classList.add('visible');
-            } else {
-                img.src.replace('-high', '-low');
-                entry.target.classList.remove('visible');
-            }
-        })
-    })
-    images.forEach(image => {
-        observer.observe(image);
-    });
-});
+const name = prompt('Your name?');
+const age = prompt('Your age?');
+const data = {
+    name: name,
+    age: parseInt(age, 10),
+};
+const jsonData = JSON.stringify(data);
+console.log(JSON.parse(jsonData));
