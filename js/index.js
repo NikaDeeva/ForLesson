@@ -1,40 +1,107 @@
 "use strict"
-// localStorage.setItem(key, value);
-// const settings = {
-//     theme: 'dark',
-//     isAutho: true,
-//     options: [1, 2, 3],
-// };
-// localStorage.setItem('settings', JSON.stringify(settings));
-// const savedSettings = localStorage.getItem('settings');
-// const parsedSettings = JSON.parse(settingsFromLS);
-// console.loga(parsedSettings);
-// localStorage.removeItem('theme');
-// const text = document.getElementById('authoSave');
-// const STORAGE_KEY = 'authoSave';
-// const savedText = localStorage.getItem(STORAGE_KEY);
-// if (savedText){
-//     text.value = savedText;
-// }
-// text.addEventListener('input', (e) => {
-//     localStorage.setItem(STORAGE_KEY, text.value);
-// });
-const form = document.getElementById('form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+let users = JSON.parse(localStorage.getItem('users')) || [];
+let editIndex = null;
+const addBtn = document.getElementById('addBtn');
+const editBtn = document.getElementById('editBtn');
+const deleteBtn = document.getElementById('deleteBtn');
+function renderTable(){
+    const tableBody = document.getElementById('tbody');
+    tableBody.innerHTML = '';
+    users.forEach((user, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML =
+         `<td>${user.name}</td>
+<td>${user.surname}</td>
+<td>${user.email}</td>
+<td>${user.phone}</td>
+<td>
+    <button id='editBtn'>Edit</button>
+    <button id='deleteBtn'>Delete</button>
+</td>`;
+tableBody.appendChild(row);
+    }); 
+};
+
+addBtn.addEventListener('click', () => {
     const name = document.getElementById('name').value;
-    const age = document.getElementById('age').value;
+    const surname = document.getElementById('surname').value;
     const email = document.getElementById('email').value;
-    localStorage.setItem('username', name);
-    localStorage.setItem('userage', age);
-    localStorage.setItem('useremail', email);
-    alert('Data saved');
-});
-window.addEventListener('load', () => {
-    const name =  localStorage.getItem('username');
-    const age = localStorage.getItem('userage');
-    const email =  localStorage.getItem('useremail');
-    if (name && age && email){
-        alert(`Data saved. Name: ${name} Age: ${age} Email: ${email}`);
+    const phone = document.getElementById('tel').value;
+
+    if (name && surname && email && phone){
+        const user = {name, surname, email, phone};
+        if (editIndex !== 0){
+            users[editIndex] = user;
+            editIndex = null;
+        }
+        else {
+            users.push(user);
+        }
+        localStorage.setItem('users', JSON.stringify(users));
+        renderTable();
+       name = '';
+       surname = '';
+       email = '';
+       phone = '';
+    } else {
+        alert('Fill all fields');
     }
 });
+// function addUser(){
+//     const name = document.getElementById('name').value;
+//     const surname = document.getElementById('surname').value;
+//     const email = document.getElementById('email').value;
+//     const phone = document.getElementById('tel').value;
+
+//     if (name && surname && email && phone){
+//         const user = {name, surname, email, phone};
+//         if (editIndex !== 0){
+//             users[editIndex] = user;
+//             editIndex = null;
+//         }
+//         else {
+//             users.push(user);
+//         }
+//         localStorage.setItem('users', JSON.stringify(users));
+//         renderTable();
+//        name = '';
+//        surname = '';
+//        email = '';
+//        phone = '';
+//     } else {
+//         alert('Fill all fields');
+//     }
+// };
+editBtn.addEventListener('click', () => {
+    const user = users[index];
+    const name = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('tel').value;
+    name = user.name;
+    surname = user.surname;
+    email = user.email;
+    phone = user.phone;
+});
+// function editUser(index){
+//     const user = users[index];
+//     const name = document.getElementById('name').value;
+//     const surname = document.getElementById('surname').value;
+//     const email = document.getElementById('email').value;
+//     const phone = document.getElementById('tel').value;
+//     name = user.name;
+//     surname = user.surname;
+//     email = user.email;
+//     phone = user.phone;
+// };
+deleteBtn.addEventListener('click', () => {
+    users.splice(index, 1);
+    localStorage.setItem('users', JSON.stringify(users));
+    renderTable();
+});
+// function deleteUser(index){
+//     users.splice(index, 1);
+//     localStorage.setItem('users', JSON.stringify(users));
+//     renderTable();
+// };
+renderTable();

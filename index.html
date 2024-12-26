@@ -4,22 +4,51 @@
 <meta>
 <link rel="stylesheet" href="./style.css">
 <title>Document</title>
-
+<style>
+    table{
+        width: 90%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+    th, td{
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th{
+        background-color: aquamarine;
+    }
+    .container{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+</style>
     </head>
     <body>
-<!-- <textarea placeholder="Write text" id="authoSave" cols="50" rows="10"></textarea> -->
- <form id="form">
-    <label for="">
-        <input type="text" placeholder="Write your name" id="name" required>
-    </label>
-    <label for="">
-        <input type="number" placeholder="Write your age" id="age">
-    </label>
-    <label for="">
-        <input type="email" placeholder="Write your email" id="email" required>
-    </label>
-    <button id="save" type="submit">Save</button>
- </form>
+<h1>User table</h1>
+<form class="container">
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="surname" placeholder="SurName">
+    <input type="email" id="email" placeholder="Email">
+    <input type="tel" id="tel" placeholder="Phone">
+    <button id="addBtn">Add</button>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+</table>
+
+
         <script type="module" src="./js/index.js"></script>
     </body>
 </html>
