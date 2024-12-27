@@ -1,107 +1,59 @@
 "use strict"
-let users = JSON.parse(localStorage.getItem('users')) || [];
-let editIndex = null;
-const addBtn = document.getElementById('addBtn');
-const editBtn = document.getElementById('editBtn');
-const deleteBtn = document.getElementById('deleteBtn');
-function renderTable(){
-    const tableBody = document.getElementById('tbody');
-    tableBody.innerHTML = '';
-    users.forEach((user, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML =
-         `<td>${user.name}</td>
-<td>${user.surname}</td>
-<td>${user.email}</td>
-<td>${user.phone}</td>
-<td>
-    <button id='editBtn'>Edit</button>
-    <button id='deleteBtn'>Delete</button>
-</td>`;
-tableBody.appendChild(row);
-    }); 
+const form = document.querySelector('#form');
+const nameExpence = document.querySelector('#name');
+const amountExpence = document.querySelector('#amount');
+const totalAmount = document.querySelector('#total');
+const list = document.querySelector('#list');
+const clear = document.querySelector('#clear');
+const deleteBtn = document.querySelector('#deleteBtn');
+
+let expences = JSON.parse(localStorage.getItem('expences')) || [];
+
+function updateTotal () {
+const total = expences.reduce((sum, expence) => sum + expence.amount, 0);
+totalAmount.textContent = total.toFixed(2);
 };
-
-addBtn.addEventListener('click', () => {
-    const name = document.getElementById('name').value;
-    const surname = document.getElementById('surname').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('tel').value;
-
-    if (name && surname && email && phone){
-        const user = {name, surname, email, phone};
-        if (editIndex !== 0){
-            users[editIndex] = user;
-            editIndex = null;
-        }
-        else {
-            users.push(user);
-        }
-        localStorage.setItem('users', JSON.stringify(users));
-        renderTable();
-       name = '';
-       surname = '';
-       email = '';
-       phone = '';
-    } else {
-        alert('Fill all fields');
-    }
+function render(){
+    list.innerHTML = '';
+    expences.forEach((expence, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${expence.name} - ${expence.amount.toFixed(2)}</span>
+        <button id="deleteBtn">Delete</button>`;
+        list.appendChild(li);
+    });
+    updateTotal();
+};
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = nameExpence.value.trim();
+    const amount = parseFloat(amountExpence.value);
+if (name && !isNaN(amount) && amount > 0){
+    expences.push({ name, amount });
+    localStorage.setItem('expences', JSON.stringify(expences));
+    name = '';
+    amount = '';
+    render();
+} else {
+    alert('Check correction of data');
+}
 });
-// function addUser(){
-//     const name = document.getElementById('name').value;
-//     const surname = document.getElementById('surname').value;
-//     const email = document.getElementById('email').value;
-//     const phone = document.getElementById('tel').value;
 
-//     if (name && surname && email && phone){
-//         const user = {name, surname, email, phone};
-//         if (editIndex !== 0){
-//             users[editIndex] = user;
-//             editIndex = null;
-//         }
-//         else {
-//             users.push(user);
-//         }
-//         localStorage.setItem('users', JSON.stringify(users));
-//         renderTable();
-//        name = '';
-//        surname = '';
-//        email = '';
-//        phone = '';
-//     } else {
-//         alert('Fill all fields');
-//     }
+// function deleteExpence(index) {
+//     expences.splice(index, 1);
+//     localStorage.setItem('expences', JSON.stringify(expences));
+//     render();
 // };
-editBtn.addEventListener('click', () => {
-    const user = users[index];
-    const name = document.getElementById('name').value;
-    const surname = document.getElementById('surname').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('tel').value;
-    name = user.name;
-    surname = user.surname;
-    email = user.email;
-    phone = user.phone;
+deleteBtn.addEventListener('click', (index) => {
+    expences.splice(index, 1);
+    localStorage.setItem('expences', JSON.stringify(expences));
+    render();
 });
-// function editUser(index){
-//     const user = users[index];
-//     const name = document.getElementById('name').value;
-//     const surname = document.getElementById('surname').value;
-//     const email = document.getElementById('email').value;
-//     const phone = document.getElementById('tel').value;
-//     name = user.name;
-//     surname = user.surname;
-//     email = user.email;
-//     phone = user.phone;
-// };
-deleteBtn.addEventListener('click', () => {
-    users.splice(index, 1);
-    localStorage.setItem('users', JSON.stringify(users));
-    renderTable();
+clear.addEventListener('click', () => {
+const message = confirm('Do you really want to delete the history?');
+if (message === true){
+    expences = [];
+    localStorage.removeItem(expences);
+    render();
+}
 });
-// function deleteUser(index){
-//     users.splice(index, 1);
-//     localStorage.setItem('users', JSON.stringify(users));
-//     renderTable();
-// };
-renderTable();
+render();
