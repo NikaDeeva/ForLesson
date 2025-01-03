@@ -1,14 +1,7 @@
 "use strict"
-const startBtn = document.querySelector('.start');
-const stopBtn = document.querySelector('.stop');
-let timer;
+const block = document.querySelector('.box');
 
-startBtn.addEventListener('click', () => {
-    timer = setInterval(() => {
-        console.log(`${Math.random()}`);
-}, 1000)
-});
-stopBtn.addEventListener('click', () => {
-    clearInterval(timer);
-    console.log('Interval stopped');
-});
+setTimeout(() => {
+    const text = document.querySelector('.text');
+    text.textContent = 'New';
+}, 2000);
