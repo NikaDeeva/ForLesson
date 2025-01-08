@@ -1,10 +1,35 @@
-.box{
-  width: 200px;
-  height: 200px;
-  border: 2px solid #191955;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
+body{
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: aliceblue;
+}
+.container{
+  max-width: 400px;
   margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+h2{
+  margin-bottom: 20px;
+}
+#watch{
+  font-size: 40px;
+  margin: 20px 0;
+}
+button{
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #fff;
+  background-color: darkcyan;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+button:hover{
+  background-color: blue;
+}
+button.hidden{
+  display: none;
 }
