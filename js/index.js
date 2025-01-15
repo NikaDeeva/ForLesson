@@ -1,120 +1,56 @@
 "use strict"
-// const display = document.querySelector('.watch');
-// const startBtn = document.querySelector('#start');
-// const pauseBtn = document.querySelector('#pause');
-// const resetBtn = document.querySelector('#reset');
-
-// let startTime = 0;
-// let elapsedTime = 0;
-// let timerInterval;
-// let lastUpdate = 0;
-
-// function formatTime(ms){
-//     const hours = Math.floor(ms / (1000 * 60 * 60));
-//     const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-//     const seconds = Math.floor((ms % (1000 * 60 * 60)) / 1000);
-//     const miliseconds = Math.floor(ms % 1000);
-
-//     return `${String(hours).padStart(2, '0')}:
-//     ${String(minutes).padStart(2, '0')}:
-//     ${String(seconds).padStart(2, '0')}:
-//     ${String(miliseconds).padStart(3, '0')}`;
-// };
-
-// function updateDisplay() {
-//     const currentTime = performance.now();
-//     elapsedTime = currentTime - lastUpdate + elapsedTime;
-//     lastUpdate = currentTime;
-
-//     display.textContent = formatTime(Math.round(elapsedTime))
-// }
-
-// startBtn.addEventListener('click', () => {
-//     startBtn.classList.add('hidden');
-//     pauseBtn.classList.remove('hidden');
-//     resetBtn.classList.remove('hidden');
-
-//     lastUpdate = performance.now();
-//     timerInterval = setInterval(updateDisplay, 10);
-// });
-// pauseBtn.addEventListener('click', () => {
-//     pauseBtn.classList.add('hidden');
-//     startBtn.classList.remove('hidden');
-
-//     clearInterval(timerInterval);
-// });
-// resetBtn.addEventListener('click', () => {
-//     clearInterval(timerInterval);
-//     elapsedTime = 0;
-//     display.textContent = '00:00:00:00';
-    
-//     startBtn.classList.remove('hidden');
-//     pauseBtn.classList.add('hidden');
-//     resetBtn.classList.add('hidden');
-// });
+// const date = new Date(10000000000);
+// console.log(date);
 
 
-// let timer = 11000;
-// const timerElement = document.getElementById('timer');
+// const dateOne = new Date('January 16, 2025');
+// console.log(dateOne);
 
-// const timerInterval = setInterval(() => {
-// timer -= 1000;
-// timerElement.textContent = (timer / 1000).toFixed(0);
-// if (timer <= 5000){
-//     document.body.style.backgroundColor = 'pink';
-// }
-// if (timer === 0){
-//     clearInterval(timerInterval);
-//     timerElement.textContent = 0;
-// }
-// }, 1000);
+// const dateTwo = new Date(2020, 9, 18);
+// console.log(dateTwo)
 
-// let timerInterval;
-// document.getElementById('start').addEventListener('click', startTimer);
-// function startTimer(){
-//     clearInterval(timerInterval);
+// const date = Date.now();
+// console.log(date)
 
-//     let minutes = parseInt(document.getElementById('minutes').value) || 0;
-//     let seconds = parseInt(document.getElementById('seconds').value) || 0;
+// const date = new Date();
+// console.log(date);
+// console.log(date.getDate());
+// console.log(date.getDay());
+// console.log(date.getMonth());
+// console.log(date.getFullYear());
+// console.log(date.getHours());
 
-//     const timerElement = document.getElementById('timer');
+// const date = new Date();
+// console.log(`Time in ms since 1 jan 1970 ${date.getTime()}`);
 
-//     function updateTimerDisplay(){
-//         timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-//     }
-//     updateTimerDisplay();
+// let result = 'Date: ';
+// result += date.getFullYear() + '/';
+// result += (date.getMonth() + 1) + '/';
+// result += date.getDate();
+// result += ' Time :' + date.getHours() + ':';
+// result += date.getMinutes() + ':';
+// result += date.getSeconds() + '.';
+// result += date.getMilliseconds();
+// console.log(result);
 
-//     timerInterval = setInterval(() => {
-//         if (seconds === 0){
-//             if (minutes === 0){
-//                 clearInterval(timerInterval);
-//                 timerElement.textContent = 'Time finished';
-//                 return;
-//             } else {
-//                 minutes--;
-//                 seconds = 59;
-//             }
-//         }
-//         else {
-//             seconds--;
-//         }
-//         updateTimerDisplay();
-//     }, 1000);
-// }
+// const date = new Date(2025, 0, 15, 20, 0, 0, 0);
+// console.log(date.getTime());
 
+// const secondsDate = new Date();
+// secondsDate.setFullYear(2026, 2, 14);
+// console.log(secondsDate)
 
-const box = document.getElementById('box');
-let growing = true;
-const maxSize = 200;
-const minSize = 100;
-
-function animateBox(){
-    if (growing){
-        box.style.transform = 'scale(1.5)';
-    } else {
-        box.style.transform = 'scale(1)';
-
-    }
-    growing = !growing;
+let date = new Date();
+const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
 }
-setInterval(animateBox, 1000);
+const locateUK = date.toLocaleString('Uk-uk', options);
+console.log(locateUK);
+
+const locateUs = date.toLocaleString('en-US', options);
+console.log(locateUs);
