@@ -40,17 +40,56 @@
 // secondsDate.setFullYear(2026, 2, 14);
 // console.log(secondsDate)
 
-let date = new Date();
-const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-}
-const locateUK = date.toLocaleString('Uk-uk', options);
-console.log(locateUK);
+// let date = new Date();
+// const options = {
+//     weekday: 'long',
+//     year: 'numeric',
+//     month: 'short',
+//     day: 'numeric',
+//     hour: '2-digit',
+//     minute: '2-digit',
+// }
+// const locateUK = date.toLocaleString('Uk-uk', options);
+// console.log(locateUK);
 
-const locateUs = date.toLocaleString('en-US', options);
-console.log(locateUs);
+// const locateUs = date.toLocaleString('en-US', options);
+// console.log(locateUs);
+
+// const now = new Date();
+// console.log(now.toString());
+
+// const now = new Date();
+// console.log(now.toTimeString())
+
+// let date = new Date();
+// console.log(+date);
+
+// let start = new Date();
+// for (let i = 0; i < 100000; i++){
+//     let doSmth = i * i * i;
+// }
+// let end = Date.now();
+// console.log(end - start);
+
+// const date = new Date();
+// console.log(date);
+// console.log(date.toDateString());
+// console.log(date.toTimeString());
+
+// let today = new Date();
+// let tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+// const ms = tomorrow - today;
+// console.log(parseFloat(ms / 1000));
+
+const getAge = (birthDate) => {
+let today = new Date();
+const birth = new Date(birthDate);
+let age = today.getFullYear() - birth.getFullYear();
+const isMore = today.getMonth() > birth.getMonth() || 
+(today.getMonth() === birth.getMonth() && today.getDate >= birth.getDate());
+if (!isMore){
+    age--;
+}
+return age;
+};
+console.log(getAge('2013-06-04'));
