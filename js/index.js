@@ -81,15 +81,46 @@
 // const ms = tomorrow - today;
 // console.log(parseFloat(ms / 1000));
 
-const getAge = (birthDate) => {
-let today = new Date();
-const birth = new Date(birthDate);
-let age = today.getFullYear() - birth.getFullYear();
-const isMore = today.getMonth() > birth.getMonth() || 
-(today.getMonth() === birth.getMonth() && today.getDate >= birth.getDate());
-if (!isMore){
-    age--;
+// const getAge = (birthDate) => {
+// let today = new Date();
+// const birth = new Date(birthDate);
+// let age = today.getFullYear() - birth.getFullYear();
+// const isMore = today.getMonth() > birth.getMonth() || 
+// (today.getMonth() === birth.getMonth() && today.getDate >= birth.getDate());
+// if (!isMore){
+//     age--;
+// }
+// return age;
+// };
+// console.log(getAge('2013-06-04'));
+
+// function checkDate(date){
+//     let today = Date.now();
+//     let givenDate = new Date(date);
+//     return today < givenDate;
+// }
+// console.log(checkDate('2025-01-01'));
+
+// let birthDay = prompt('Your birthday');
+// function birth(birthDate){
+//     let today = new Date().getTime();
+//     let birth = new Date.getTime(birthDate);
+// const days = Math.floor((birth - today) / (1000 * 60 * 60 * 24) );
+// return days;
+// }
+// console.log(birth(birthDay));
+
+let yearI = parseInt(prompt('Year')) ;
+let monthI = parseInt(prompt('Month')) ;
+function getLastDayOfMonth(year, month) {
+    let today = new Date(`${year}-${month-1}`);
+    let nextYearDate;
+    if (month - 1 === 11){
+nextYearDate = new Date(`${year+1}-00-01`);
+    } else {
+        nextYearDate = new Date(`${year}-${month}-01`); 
+    }
+    const days = Math.floor((nextYearDate - today) / (1000 * 60 * 60 * 24));
+    return days;
 }
-return age;
-};
-console.log(getAge('2013-06-04'));
+console.log(getLastDayOfMonth(yearI, monthI));
