@@ -1,84 +1,50 @@
 "use strict"
-// const makePromise = (text, delay) => {
-//     return new Promise(resolve => {
-//         setTimeout(() => resolve(text), delay)
-//     })
-// }
-// const promiseOne = makePromise('promise one', 1500);
-// const promiseTwo = makePromise('promise two', 3000);
-
-// Promise.all([promiseOne, promiseTwo])
-// .then((value) => {
-//     console.log(value);
-// })
-// .catch((error) => console.log('error'));
-
-// const makePromise = (text, delay) => {
-//         return new Promise(resolve => {
-//             setTimeout(() => resolve(text), delay)
-//         })
-//     }
-//     const promiseOne = makePromise('promise one', 1500);
-//     const promiseTwo = makePromise('promise two', 3000);
-    
-//     Promise.race([promiseOne, promiseTwo])
-//     .then((value) => {
-//         console.log(value);
-//     })
-//     .catch((error) => console.log('error'));
-
-// Promise.any([
-//     new Promise((resolve, reject) => setTimeout(() => reject(new Error('Oops!')), 1000)),
-//     new Promise((resolve, reject) => setTimeout(() => resolve('Great!'), 1500)),
-//     new Promise((resolve, reject) => setTimeout(() => reject(new Error('Error')), 2000))
-// ]).then(value => console.log(value))
-// .catch(error => {
-//     console.log(error);
-// });
-
-// new Promise(resolve => resolve('success')).then(value => console.log(value));
-// Promise.resolve('success').then(value => console.log(value));
-
-// new Promise((resolve, reject) => reject(error)).catch(error => console.log(error));
-// Promise.reject(error).catch(error => console.log(error));
-
-// const makePromise = guestName => {
-//     if (guestName === '' || guestName === undefined){
-//         return {
-//             success: false,
-//             message: 'Error guest name',
-//         }
-//     } 
-//     return {
-//         success: true,
-//         message: `Welcome ${guestName}`,
-//     };
-// }
-// const result = makePromise('');
-
-// if (result.success){
-//     console.log(result.message);
-// } else {
-//     console.error(result.message);
-// }
-
-// const makePromise = (guestName, onSuccess, onError) => {
-//     if (guestName === '' || guestName === undefined){
-//         return(onError('Error guest name'));
-//     }
-//     onSuccess(`Welcome ${guestName}`);
-// }
-// makePromise('', 
-//     success => console.log(success),
-//     error => console.log(error)
-// );
-
-const makePromise = guestName => {
-    if (guestName === '' || guestName === undefined){
-        return Promise.reject('Error guest name')
-    }
-    return Promise.resolve(`Welcome ${guestName}`);
+const horses = ['Henry', 'Sam', 'Alice', 'George', 'Luisa'];
+let raceCounter = 0;
+const refs = {
+    startBtn: document.querySelector('.js-start-race'),
+    winnerField: document.querySelector('.js-winner'),
+    progress: document.querySelector('.js-progress'),
+    tableBody: document.querySelector('.js-table-body'),
+};
+refs.startBtn.addEventListener('click', onStart);
+function onStart(){
+    raceCounter++;
+    const promises = horses.map(run);
+    updateWinnerField('');
+    updateProgressField('Race has already begun');
+    determineWinner(promises);
+    waitForAll(promises);
 }
-makePromise('Bob')
-.then(value => console.log(value))
-.catch(error => console.error(error));
+function determineWinner(promises){
+    Promise.race(promises).then(({horse, time}) => {
+        updateWinnerField(`Winner ${horse} finished in ${time}`);
+        updateResultsTable({horse, time, raceCounter});
+    })
+};
+function waitForAll(promises){
+Promise.all(promises).then(() => {
+    updateProgressField('Race has finished');
+})
+};
+function updateWinnerField(message){
+    refs.winnerField.textContent = message;
+};
+function updateProgressField(message){
+    refs.progress.textContent = message;
+}
+function updateResultsTable({horse, time, raceCounter}){
+    const tr = `<tr><td>${raceCounter}</td><td>${horse}</td><td>${time}</td>`;
+    refs.tableBody.insertAdjacentHTML('beforeend', tr)
+};
+function run(horse){
+    return new Promise(resolve => {
+        const time = getRandomTime(1500, 3000);
+        setTimeout(() => {
+            resolve({horse, time});
+        }, time)
+    })
+};
+function getRandomTime(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
