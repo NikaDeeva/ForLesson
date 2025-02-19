@@ -1,51 +1,44 @@
 "use strict"
-const horses = ['Henry', 'Sam', 'Alice', 'George', 'Luisa'];
-let raceCounter = 0;
-const refs = {
-    startBtn: document.querySelector('.js-start-race'),
-    winnerField: document.querySelector('.js-winner'),
-    progressField: document.querySelector('.js-progress'),
-    tableBody: document.querySelector('.js-table-body'),
-};
-refs.startBtn.addEventListener('click', onStart);
-function onStart(){
-    raceCounter += 1;
-    const promises = horses.map(run);
-    updateWinnerField('');
-    updateProgressField('Race already has begun');
-    determineWinner(promises);
-    waitForAll(promises);
-}
+// const btn = document.querySelector('#getFact');
+// const p = document.getElementById('fact');
+// btn.addEventListener('click', () => {
+// fetch('https://catfact.ninja/fact')
+//  .then(response => response.json())
+//  .then(data => {
+//     p.textContent = data.fact;
+//  })
+//  .catch(error => {
+//     p.textContent = 'There is an error 😿';
+//     console.log(error);
+//  });
+// });
 
-function determineWinner(horsesP){
-Promise.race(horsesP).then(({horse, time}) => {
-    updateWinnerField(`Winner ${horse} finished in ${time}`);
-    updateResultsTable((horse, time, raceCounter));
+const btn = document.querySelector('#btn');
+const usersList = document.querySelector('#usersList');
+btn.addEventListener('click', () => {
+fetchUsers()
+.then(users => renderUsers(users))
+.catch(error => console.log(error));
+});
+
+function fetchUsers(){
+    return fetch('https://jsonplaceholder.typicode.com/users')
+     .then(response => {
+        if (!response.ok){
+          throw new Error(response.status);
+        }
+        return response.json();
+     });
+};
+function renderUsers(users){
+const markUp = users.map(user => {
+    return `<li>
+  <p><b>Name: </b>${user.name}</p>
+  <p><b>Email: </b>${user.email}</p>
+  <p><b>Company: </b>${user.company.name}</p>
+</li>`;
 })
-};
-function waitForAll(horsesP){
-Promise.all(promises).then(() => {
-    updateProgressField('Race has finished');
-})
-};
-function updateWinnerField(message){
-refs.winnerField.textContent = message;
-};
-function updateProgressField(message){
-    refs.progressField.textContent = message;
-}
-function updateResultsTable({horse, time, raceCounter}){
-    const tr = `<tr><td>${raceCounter}</td><td>${horse}</td><td>${time}</td>`;
-    refs.tableBody.insertAdjacentHTML('beforeend', tr);
-};
-function run(horse){
-    return new Promise(resolve => {
-        const time = getRandomTime(1500, 3000);
-        setTimeout(() => {
-            resolve({horse, time});
-        }, time);
-    })
-};
-function getRandomTime(min, max){
-    return Math.floor(Math.random() * (max - min + 1) + min);
+.join('');
+usersList.insertAdjacentHTML('beforeend', markUp)
+
 }
