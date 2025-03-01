@@ -14,7 +14,7 @@ fetchNews(topic);
   }
   function fetchNews(topic){
     const apiKey = '96611445a11e473daa4019771c28da7d';
-  const data = fetch(`https://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}&pageSize=10`)
+  const data = fetch(`https://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}&pageSize=9`)
   .then(response => response.json())
   .then(general => {
     if (general.status == 'ok'){
@@ -32,12 +32,12 @@ fetchNews(topic);
   function renderNews(articles) {
     const markUp = articles.map(article => {
       return ` <li class="newsItem">
-      <p class="author">Author: ${article.author}</p>
-      <h3 class="title">${article.title}</h3>
-      <p class="describe">${article.description}</p>
       <div class="imgWrap">
         <img src="${article.urlToImage}" alt="" class="image">
       </div>
+      <p class="author"><i>Author: ${article.author}</i></p>
+      <h3 class="title">${article.title}</h3>
+      <p class="describe">${article.description}</p>
     </li>`;
     });
     list.insertAdjacentHTML('beforeend', markUp.join(''));
