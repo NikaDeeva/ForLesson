@@ -1,48 +1,49 @@
 "use strict"
-document.addEventListener('DOMContentLoaded', () => {
-const input = document.querySelector('#input');
-const form = document.querySelector('.form');
-const list = document.querySelector('.newsList');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const topic = input.value;
-  if (!topic){
-    alert('Write correct search');
-  } else{
-    list.innerHTML = '';
-fetchNews(topic);
-  }
-  function fetchNews(topic){
-    const apiKey = '96611445a11e473daa4019771c28da7d';
-  const data = fetch(`https://newsapi.org/v2/everything?q=${topic}&apiKey=${apiKey}&pageSize=9`)
-  .then(response => response.json())
-  .then(general => {
-    if (general.status == 'ok'){
-  renderNews(general.articles);
-    } else{
-      console.error(general.status);
-      alert('There is a problem');
-    }
-  })
-  .catch(error =>{
-    console.error(error);
-    alert('There is not such topic');
-  } );
-  
-  function renderNews(articles) {
-    const markUp = articles.map(article => {
-      return ` <li class="newsItem">
-      <div class="imgWrap">
-        <img src="${article.urlToImage}" alt="" class="image">
-      </div>
-      <p class="author"><i>Author: ${article.author}</i></p>
-      <h3 class="title">${article.title}</h3>
-      <p class="describe">${article.description}</p>
-    </li>`;
-    });
-    list.insertAdjacentHTML('beforeend', markUp.join(''));
-  }
-  }
-  })
-  
-});
+// fetch('https://jsonplaceholder.typicode.com/albums/85')
+// .then(response => response.json())
+// .then(data => console.log(data));
+
+// const postAdd = {
+//   author: 'Anna',
+//   body: 'CRUD',
+// };
+// const options = {
+//   method: 'POST',
+//   body: JSON.stringify(postAdd),
+//   headers: {
+// "Content-Type": 'aplication/json',
+//   }
+// };
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: "POST",
+  headers: {
+    "Content-Type": 'aplication/json',
+      },
+      body: JSON.stringify({
+        author: 'Anna',
+        body: 'CRUD',
+        title: 'Title',
+        userId: 100,
+      })
+})
+.then(response => response.json())
+.then(post => console.log(post))
+.catch(error => console.log(error));
+
+
+const postAdd = {
+  author: 'Anna',
+  body: 'CRUD new',
+  id: 2,
+};
+const options = {
+  method: 'PATCH',
+  body: JSON.stringify(postAdd),
+  headers: {
+"Content-Type": 'aplication/json',
+  },
+};
+fetch(`https://jsonplaceholder.typicode.com/posts/${postAdd.id}`, options)
+.then(response => response.json())
+.then(post => console.log(post))
+.catch(error => console.log(error));
