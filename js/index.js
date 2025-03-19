@@ -1,49 +1,41 @@
 "use strict"
-// fetch('https://jsonplaceholder.typicode.com/albums/85')
-// .then(response => response.json())
-// .then(data => console.log(data));
-
-// const postAdd = {
-//   author: 'Anna',
-//   body: 'CRUD',
-// };
-// const options = {
-//   method: 'POST',
-//   body: JSON.stringify(postAdd),
-//   headers: {
-// "Content-Type": 'aplication/json',
+// const fetchUsers = async () => {
+//   try{
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//     const users = await response.json();
+//     console.log(users);
+//   }
+//   catch (error){
+// console.log(error.message);
 //   }
 // };
-fetch('https://jsonplaceholder.typicode.com/posts', {
-  method: "POST",
-  headers: {
-    "Content-Type": 'aplication/json',
-      },
-      body: JSON.stringify({
-        author: 'Anna',
-        body: 'CRUD',
-        title: 'Title',
-        userId: 100,
-      })
-})
-.then(response => response.json())
-.then(post => console.log(post))
-.catch(error => console.log(error));
+// fetchUsers()
 
+// const fetchUsers = async () => {
+//   const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//       const users = await response.json();
+//       return users;
+// };
+// const doUsers = async () => {
+//   try {
+//     const users = await fetchUsers();
+//     console.log()
+//   }
+//   catch (error){
+//     console.log(error.message);
+//       }
+// };
+// doUsers();
 
-const postAdd = {
-  author: 'Anna',
-  body: 'CRUD new',
-  id: 2,
+const fetchUsers = async () => {
+  const url = 'https://jsonplaceholder.typicode.com';
+  const first = await fetch(`${url}/users/1`);
+  const second = await fetch(`${url}/users/2`);
+  const third = await fetch(`${url}/users/3`);
+
+  const firstU = await first.json();
+  const secondU = await second.json();
+  const thirdU = await third.json();
+  console.log(firstU, secondU, thirdU);
 };
-const options = {
-  method: 'PATCH',
-  body: JSON.stringify(postAdd),
-  headers: {
-"Content-Type": 'aplication/json',
-  },
-};
-fetch(`https://jsonplaceholder.typicode.com/posts/${postAdd.id}`, options)
-.then(response => response.json())
-.then(post => console.log(post))
-.catch(error => console.log(error));
+fetchUsers();
